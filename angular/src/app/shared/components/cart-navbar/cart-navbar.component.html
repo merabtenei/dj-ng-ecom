@@ -1,0 +1,11 @@
+
+<div class="mx-3" style="cursor:pointer;" routerLink="/cart-checkout">
+    
+    <i class='bi bi-cart-fill fs-5'></i>
+    <span class="badge"
+          [class.bg-secondary]="cartService.count == 0"
+          [class.bg-danger]="cartService.count > 0">
+          {{cartService.count}}
+    </span>
+    
+</div>

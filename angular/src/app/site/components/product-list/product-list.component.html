@@ -1,0 +1,9 @@
+<div class="container-lg">
+  <div class="row justify-content-center">
+    <ng-container *ngFor="let prod of products">
+      <div class="col-lg-2 col-md-3 col-6">
+        <app-product [product]="prod"></app-product>
+      </div>
+    </ng-container>
+  </div>
+</div>

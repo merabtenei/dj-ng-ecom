@@ -1,0 +1,27 @@
+<div class="dropdown">
+  <div
+    class="dropdown-toggle align-middle px-3"
+    id="dropdownMenuButton1"
+    role="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+  >
+    
+    <div class="row align-items-center d-inline-flex">
+      <span class="col px-1">{{ authService.user?.username }}</span>
+      <i class="col px-1 bi bi-person-fill" style="font-size: 1.5rem"></i>
+    </div>
+  </div>
+
+  <ul
+    class="dropdown-menu dropdown-menu-end"
+    aria-labelledby="dropdownMenuButton1"
+  >
+    <li *ngIf="authService.user?.is_staff || authService.user?.is_superuser"><a class="dropdown-item" routerLink="/admin">Admin panel</a></li>
+    <li *ngIf="authService.user?.is_staff || authService.user?.is_superuser"><hr class="dropdown-divider" /></li>
+    <li><a class="dropdown-item" routerLink="/profil">My profil</a></li>
+    <li><a class="dropdown-item" routerLink="/my-orders">My orders</a></li>
+    <li><hr class="dropdown-divider" /></li>
+    <li><a class="dropdown-item" (click)="authService.logout()" href="">Logout</a></li>
+  </ul>
+</div>
